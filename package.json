@@ -1,0 +1,36 @@
+{
+  "name": "lunch-slackbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "serverless.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy:prod": "sls deploy --stage prod --aws-profile personal-prod",
+    "remove:prod": "sls remove --stage prod",
+    "lint": "npx prettier --check 'src/**/*.{ts,tsx,js}'",
+    "lint:fix": "npx prettier --write 'src/**/*.{ts,tsx,js}'",
+    "function:add": "cp -r ./src/functions/hello ./src/functions/new-function"
+  },
+  "engines": {
+    "node": ">=14.15.0"
+  },
+  "dependencies": {
+    "@middy/core": "^4.1.0",
+    "@middy/http-json-body-parser": "^4.1.0",
+    "node-html-parser": "^6.1.4"
+  },
+  "devDependencies": {
+    "@serverless/typescript": "^3.25.0",
+    "@types/aws-lambda": "^8.10.109",
+    "@types/node": "^18.11.18",
+    "esbuild": "^0.16.12",
+    "json-schema-to-ts": "^2.6.2",
+    "serverless": "^3.26.0",
+    "serverless-esbuild": "^1.37.0",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.2",
+    "typescript": "^4.9.4"
+  },
+  "author": "",
+  "license": "MIT"
+}
