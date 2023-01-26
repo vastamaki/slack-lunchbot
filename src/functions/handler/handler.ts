@@ -23,12 +23,28 @@ const stupidTuesday = [
   },
 ];
 
+const shalimar = [
+  {
+    type: "section",
+    text: {
+      type: "plain_text",
+      text: "Tänään on torstai. Syödääm Shalimarissa.",
+      emoji: true,
+    },
+  },
+];
+
 export const main = async () => {
   const d = new Date();
   const day = d.getDay();
 
   if (day === 2) {
     await sendToSlack(stupidTuesday);
+    return;
+  }
+
+  if (day === 4) {
+    await sendToSlack(shalimar);
     return;
   }
 
