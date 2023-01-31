@@ -38,6 +38,26 @@ export const main = async () => {
   const d = new Date();
   const day = d.getDay();
 
+  const isLastDayOfMonth = new Date(
+    d.getFullYear(),
+    d.getMonth() + 1,
+    0
+  ).getDate();
+
+  if (d.getDate() === isLastDayOfMonth) {
+    await sendToSlack([
+      {
+        type: "section",
+        text: {
+          type: "plain_text",
+          text: "Rahulipäivä! Syödääm kaikki rahat loppuun. Oli tiistai tai ei.",
+          emoji: true,
+        },
+      },
+    ]);
+    return;
+  }
+
   if (day === 2) {
     await sendToSlack(stupidTuesday);
     return;
