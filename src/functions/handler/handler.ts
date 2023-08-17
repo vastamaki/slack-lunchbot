@@ -28,7 +28,7 @@ const shalimar = [
     type: "section",
     text: {
       type: "plain_text",
-      text: "Tänään on torstai. Syödääm Shalimarissa.",
+      text: "Tänään on torstai. Tiädätte khyl minne mennä :))",
       emoji: true,
     },
   },
